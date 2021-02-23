@@ -13,6 +13,8 @@
     <module>cloud-provider-payment8001</module>
     <module>cloud-consumer-order80</module>
     <module>cloud-api-commons</module>
+    <module>cloud-eureka-server7001</module>
+    <module>cloud-eureka-server7002</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,6 +28,15 @@
     <mybatis.starter.version>2.1.2</mybatis.starter.version>
     <lombok.version>1.18.12</lombok.version>
   </properties>
+  <dependencies>
+    <!--        热部署-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
   <dependencyManagement>
     <dependencies>
       <dependency>
