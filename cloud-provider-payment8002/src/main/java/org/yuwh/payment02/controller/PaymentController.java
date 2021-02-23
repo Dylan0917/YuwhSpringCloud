@@ -1,16 +1,13 @@
-package org.yuwh.payment.controller;
+package org.yuwh.payment02.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
-import org.yuwh.payment.service.PaymentService;
+import org.yuwh.payment02.service.PaymentService;
 import org.yuwh.springcloud.entities.CommonResult;
 import org.yuwh.springcloud.entities.Payment;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author yu.wenhua
@@ -25,9 +22,6 @@ public class PaymentController {
     PaymentService paymentService;
     @Value("${server.port}")
     private String SERVER_PORT;
-
-    @Resource
-    private DiscoveryClient discoveryClient;//服务发现
 
 //    @RequestBody是用来修饰入参的, 表示将请求正文以参数的形式传入到方法中
     @PostMapping("/create")
@@ -52,16 +46,4 @@ public class PaymentController {
         }
     }
 
-    @GetMapping("/discovery")
-    public Object discovery(){
-        final List<String> services = discoveryClient.getServices();
-        for (String service : services) {
-            log.info("****element:"+service);
-        }
-        final List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-        for (ServiceInstance instance : instances) {
-            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
-        }
-        return this.discoveryClient;
-    }
 }

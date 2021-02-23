@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 spring:
   application:
     name: cloud-payment-service
@@ -33,7 +33,7 @@ logging:
     root: info
 eureka:
   instance:
-    instance-id: payment8001
+    instance-id: payment8002
     prefer-ip-address: true #在eureka中显示IP地址
   client:
     register-with-eureka: true #表示向注册中心注册自己 默认为true
