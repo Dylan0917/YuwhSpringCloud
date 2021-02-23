@@ -1,7 +1,7 @@
 package org.yuwh.payment.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.yuwh.payment.entities.Payment;
+import org.yuwh.springcloud.entities.Payment;
 
 /**
  * @author yu.wenhua

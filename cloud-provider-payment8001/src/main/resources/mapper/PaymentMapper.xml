@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.yuwh.payment.dao.PaymentDao">
 
-    <resultMap id="BaseResultMap" type="org.yuwh.payment.entities.Payment">
+    <resultMap id="BaseResultMap" type="org.yuwh.springcloud.entities.Payment">
         <!-- column：主键在数据库中的列名 -->
         <id column="id" property="id" jdbcType="BIGINT"></id>
 

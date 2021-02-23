@@ -2,8 +2,8 @@ package org.yuwh.payment.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.yuwh.payment.dao.PaymentDao;
-import org.yuwh.payment.entities.Payment;
 import org.yuwh.payment.service.PaymentService;
+import org.yuwh.springcloud.entities.Payment;
 
 import javax.annotation.Resource;
 

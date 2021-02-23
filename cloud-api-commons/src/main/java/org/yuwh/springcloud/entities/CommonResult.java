@@ -1,4 +1,4 @@
-package org.yuwh.payment.entities;
+package org.yuwh.springcloud.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

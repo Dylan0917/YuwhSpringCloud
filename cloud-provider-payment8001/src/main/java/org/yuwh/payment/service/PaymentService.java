@@ -1,6 +1,7 @@
 package org.yuwh.payment.service;
 
-import org.yuwh.payment.entities.Payment;
+
+import org.yuwh.springcloud.entities.Payment;
 
 /**
  * @author yu.wenhua

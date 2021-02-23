@@ -3,9 +3,9 @@ package org.yuwh.payment.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.yuwh.payment.entities.CommonResult;
-import org.yuwh.payment.entities.Payment;
 import org.yuwh.payment.service.PaymentService;
+import org.yuwh.springcloud.entities.CommonResult;
+import org.yuwh.springcloud.entities.Payment;
 
 import javax.annotation.Resource;
 
@@ -23,8 +23,9 @@ public class PaymentController {
     @Value("${server.port}")
     private String SERVER_PORT;
 
+//    @RequestBody是用来修饰入参的, 表示将请求正文以参数的形式传入到方法中
     @PostMapping("/create")
-    public CommonResult create(Payment payment){
+    public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
         log.info("插入数据的ID:\t" + payment.getId());
         log.info("插入结果：" + result);

@@ -27,7 +27,7 @@ mybatis:
     #驼峰
     map-underscore-to-camel-case: true
   #所有别名类所在的包
-  type-aliases-package: org.yuwh.payment.entities
+  type-aliases-package: org.yuwh.springcloud.entities
 logging:
   level:
-    root: debug
+    root: info
