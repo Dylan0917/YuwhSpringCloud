@@ -1,0 +1,7 @@
+server:
+  port: 80
+eureka:
+  client:
+    service-url:
+      defaultZone: http://practivate.xmind.net:7002/eureka/,http://activate.xmind.net:7001/eureka/ # 入驻地址
+    register-with-eureka: false
