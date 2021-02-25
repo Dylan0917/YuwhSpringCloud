@@ -1,6 +1,5 @@
 package org.yuwh.feignorder.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +32,16 @@ public class OrderFeignClientController {
     @GetMapping(value = "/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         return paymentFeignService.getPaymentById(id);
+    }
+    /**
+     * 模拟feign超时
+     *There was an unexpected error (type=Internal Server Error, status=500).
+     * connect timed out executing GET http://CLOUD-PAYMENT-SERVICE/payment/feign/timeout
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout() {
+        // openfeign-ribbon, 客户端一般默认等待1秒钟
+        return paymentFeignService.paymentFeignTimeout();
     }
 }

@@ -5,3 +5,12 @@ eureka:
     service-url:
       defaultZone: http://practivate.xmind.net:7002/eureka/,http://activate.xmind.net:7001/eureka/ # 入驻地址
     register-with-eureka: false
+#超时配置
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+#日志
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    org.yuwh.feignorder.service.PaymentFeignService: debug

@@ -11,6 +11,7 @@ import org.yuwh.springcloud.entities.Payment;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author yu.wenhua
@@ -68,5 +69,15 @@ public class PaymentController {
     public String getPaymentLB() {
         return SERVER_PORT;
     }
-
+    //超时
+    @GetMapping(value = "/feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            // 暂停3秒钟
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return SERVER_PORT;
+    }
 }

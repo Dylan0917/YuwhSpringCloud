@@ -1,0 +1,28 @@
+package org.yuwh.feignorder.config;
+
+import feign.Logger;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @author yu.wenhua
+ * @desc
+ * @date 2021/2/25 14:08
+ */
+@Configuration
+public class FeignConfig {
+
+    /**
+     * feignClient日志级别配置
+     *
+     * @return
+     */
+    @Bean
+    public Logger.Level feignLoggerLevel() {
+        // 请求和响应的头信息,请求和响应的正文及元数据
+        return Logger.Level.FULL;
+    }
+
+
+
+}
