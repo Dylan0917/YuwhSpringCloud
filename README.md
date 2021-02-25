@@ -56,3 +56,13 @@ consul 自带 UI 界面，打开网址：[http://localhost:8500](https://link.zh
 cmd 命令窗口执行:consul.exe agent -server ui -bootstrap -client 0.0.0.0 -data-dir="E:\consul" -bind X.X.X.X
 
 其中X.X.X.X为服务器ip,即可使用http://X.X.X.X:8500 访问ui而不是只能使用localhost连接
+
+###CAP定理
+
+![img](E:\myProject\myResource\YuwhSpringCloud\readmeimg\bg2018071607.jpg)
+
+> - Consistency 一致性
+> - Availability 可用性
+> - Partition tolerance  分区容错
+
+http://www.ruanyifeng.com/blog/2018/07/cap.html
